@@ -1,5 +1,12 @@
-// import { useState } from 'react';
+import css from './Options.module.css';
 
-export const Options = () => {};
-//  const [count, setCount] = useState(0);
-// <button onClick={() => setCount(count => count + 1)}>count is {count}</button>;
+export const Options = ({ onUpdate, isHidden, onReset }) => {
+  return (
+    <div className={css.container}>
+      <button onClick={() => onUpdate('good')}>Good</button>
+      <button onClick={() => onUpdate('neutral')}>Neutral</button>
+      <button onClick={() => onUpdate('bad')}>Bad</button>
+      {!isHidden && <button onClick={onReset}>Reset</button>}
+    </div>
+  );
+};
